@@ -69,7 +69,7 @@ const config = {
       let scale = window.innerWidth / dw;
       viewport.setAttribute(
         'content',
-        'width=device-width' +
+        'width=' + dw +
         // ', initial-scale=' + scale +
         // ', maximum-scale=' + scale +
         // ', minimum-scale=' + scale +
