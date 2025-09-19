@@ -47,14 +47,14 @@ const config = {
     if (window.orientation == 0) {
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
-      dw = 375;        //页面的高度
+      dw = 750;        //页面的高度
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerHeight;
       config.height = window.innerWidth;
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
-      dw = 667;      //页面的宽度
+      dw = 1334;        //页面的宽度
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerWidth;
       config.height = window.innerHeight;
