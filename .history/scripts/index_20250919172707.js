@@ -25,7 +25,7 @@ const config = {
   function a() {
     if (document.body.clientHeight > document.body.clientWidth) {
       // 竖着的屏幕
-      dw = 1200;        //页面的高度
+      dw = 750;        //页面的高度
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
       // 此时宽高已经互换，对于c来说应该执行宽高互换后的逻辑

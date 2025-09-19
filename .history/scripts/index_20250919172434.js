@@ -25,7 +25,7 @@ const config = {
   function a() {
     if (document.body.clientHeight > document.body.clientWidth) {
       // 竖着的屏幕
-      dw = 1200;        //页面的高度
+      dw = 750;        //页面的高度
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
       // 此时宽高已经互换，对于c来说应该执行宽高互换后的逻辑
@@ -33,9 +33,9 @@ const config = {
       config.width = window.innerHeight;
       config.height = window.innerWidth;
     } else if (document.body.clientHeight < document.body.clientWidth) {
-      dw = 1334
-      // if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
-      // else dw = 1920;
+      if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
+      else dw = 1920;
+      console.log(/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua));
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerWidth;
       config.height = window.innerHeight;
