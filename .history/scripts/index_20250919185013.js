@@ -66,30 +66,14 @@ const config = {
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
       dw = 750;        //页面的高度
-      let scale = window.innerWidth / dw;
-      viewport.setAttribute(
-        'content',
-        'width=' + dw +
-        ', initial-scale=' + scale +
-        ', maximum-scale=' + scale +
-        ', minimum-scale=' + scale +
-        ', user-scalable=no'
-      );
+      viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerHeight;
       config.height = window.innerWidth;
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
       dw = 1334;        //页面的宽度
-      let scale = window.innerWidth / dw;
-      viewport.setAttribute(
-        'content',
-        'width=' + dw +
-        ', initial-scale=' + scale +
-        ', maximum-scale=' + scale +
-        ', minimum-scale=' + scale +
-        ', user-scalable=no'
-      );
+      viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerWidth;
       config.height = window.innerHeight;
     }
@@ -114,8 +98,8 @@ const config = {
 //   );
 // }
 
-// fixIOSViewport();
-// window.addEventListener('orientationchange', fixIOSViewport);
+fixIOSViewport();
+window.addEventListener('orientationchange', fixIOSViewport);
 
 
 // 计算下一个生日

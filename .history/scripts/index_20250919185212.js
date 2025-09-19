@@ -114,8 +114,8 @@ const config = {
 //   );
 // }
 
-// fixIOSViewport();
-// window.addEventListener('orientationchange', fixIOSViewport);
+fixIOSViewport();
+window.addEventListener('orientationchange', fixIOSViewport);
 
 
 // 计算下一个生日
