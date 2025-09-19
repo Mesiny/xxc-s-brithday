@@ -4,8 +4,6 @@ const giftbox = document.getElementById('merrywrap');   // 礼物盒子
 const canvasC = document.getElementById('c');   // 气球文字特效
 const c2 = document.getElementById('confetti');  // 烟花特效
 
-const ua = navigator.userAgent.toLowerCase();
-
 const config = {
   lunarData: {
     month: 7,
@@ -33,9 +31,7 @@ const config = {
       config.width = window.innerHeight;
       config.height = window.innerWidth;
     } else if (document.body.clientHeight < document.body.clientWidth) {
-      if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
-      else dw = 1920;
-      console.log(/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua));
+      dw = 1334;        //页面的宽度，也许这是礼盒导致看起来小一些的原因
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerWidth;
       config.height = window.innerHeight;
@@ -89,14 +85,9 @@ function hideEverything() {
 init();
 hideEverything();
 
-const confettiSettings = {
-  target: 'confetti'
-};
-c2.width = window.innerHeight;
-c2.height = window.innerWidth;
+const confettiSettings = { target: 'confetti' };
 const confetti = new window.ConfettiGenerator(confettiSettings);
 confetti.render();
-
 
 // 计算倒计时时间
 const second = 1000,
@@ -106,7 +97,6 @@ const second = 1000,
 
 let countDown = new Date(`${config.birthdate} 00:00:00`).getTime();  // 生日当天点时间戳
 x = setInterval(function () {
-  // 1.计算事件
   let now = new Date().getTime(),
     distance = countDown - now;
   document.getElementById('day').innerText = Math.floor(distance / day);
@@ -119,20 +109,21 @@ x = setInterval(function () {
   document.getElementById('second').innerText = Math.floor(
     (distance % minute) / second
   );
-  c2.width = config.width; c2.height = config.height;
+  // c2.width = config.width; c2.height = config.height;
   let w = (c.width = config.width),
     h = (c.height = config.height),
     ctx = c.getContext('2d'),
     hw = w / 2, // half-width
     hh = h / 2,
     opts = {
-      // 文字+气球特效配置
       strings: ['HAPPY', 'BIRTHDAY!', config.name],
       charSize: 30,
       charSpacing: 35,
       lineHeight: 40,
+
       cx: w / 2,
       cy: h / 2,
+
       fireworkPrevPoints: 10,
       fireworkBaseLineWidth: 5,
       fireworkAddedLineWidth: 8,
@@ -422,7 +413,7 @@ x = setInterval(function () {
       }
     }
   };
-  // 画碎片
+
   function Shard(x, y, vx, vy, color) {
     let vel =
       opts.fireworkShardBaseVel + opts.fireworkShardAddedVel * Math.random();
@@ -466,7 +457,7 @@ x = setInterval(function () {
 
     if (this.prevPoints[0][1] > hh) this.alive = false;
   };
-  // 画气球
+
   function generateBalloonPath(x, y, size) {
     ctx.moveTo(x, y);
     ctx.bezierCurveTo(
@@ -520,8 +511,6 @@ x = setInterval(function () {
     w = c.width = config.width;
     h = c.height = config.height;
 
-    c2.width = config.width;
-    c2.height = config.height;
 
     hw = w / 2;
     hh = h / 2;
@@ -562,7 +551,6 @@ x = setInterval(function () {
 
     function openBox() {
       if (step === 1) {
-        document.body.requestFullscreen();
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);

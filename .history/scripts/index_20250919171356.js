@@ -33,9 +33,10 @@ const config = {
       config.width = window.innerHeight;
       config.height = window.innerWidth;
     } else if (document.body.clientHeight < document.body.clientWidth) {
+      dw = 1334;        //页面的宽度，也许这是礼盒导致看起来小一些的原因
+
       if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
-      else dw = 1920;
-      console.log(/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua));
+      else dw = 1334;
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerWidth;
       config.height = window.innerHeight;
@@ -562,7 +563,6 @@ x = setInterval(function () {
 
     function openBox() {
       if (step === 1) {
-        document.body.requestFullscreen();
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);

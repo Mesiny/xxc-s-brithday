@@ -4,7 +4,14 @@ const giftbox = document.getElementById('merrywrap');   // 礼物盒子
 const canvasC = document.getElementById('c');   // 气球文字特效
 const c2 = document.getElementById('confetti');  // 烟花特效
 
-const ua = navigator.userAgent.toLowerCase();
+setTimeout(() => {
+  const confettiSettings = {
+    target: 'confetti'
+  };
+  const confetti = new window.ConfettiGenerator(confettiSettings);
+  confetti.render();
+
+}, 1000);
 
 const config = {
   lunarData: {
@@ -33,9 +40,7 @@ const config = {
       config.width = window.innerHeight;
       config.height = window.innerWidth;
     } else if (document.body.clientHeight < document.body.clientWidth) {
-      if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
-      else dw = 1920;
-      console.log(/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua));
+      dw = 1334;        //页面的宽度，也许这是礼盒导致看起来小一些的原因
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerWidth;
       config.height = window.innerHeight;
@@ -89,13 +94,6 @@ function hideEverything() {
 init();
 hideEverything();
 
-const confettiSettings = {
-  target: 'confetti'
-};
-c2.width = window.innerHeight;
-c2.height = window.innerWidth;
-const confetti = new window.ConfettiGenerator(confettiSettings);
-confetti.render();
 
 
 // 计算倒计时时间
@@ -562,7 +560,6 @@ x = setInterval(function () {
 
     function openBox() {
       if (step === 1) {
-        document.body.requestFullscreen();
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);

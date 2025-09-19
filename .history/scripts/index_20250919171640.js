@@ -34,7 +34,7 @@ const config = {
       config.height = window.innerWidth;
     } else if (document.body.clientHeight < document.body.clientWidth) {
       if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
-      else dw = 1920;
+      else dw = 1000;
       console.log(/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua));
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
       config.width = window.innerWidth;
@@ -562,7 +562,6 @@ x = setInterval(function () {
 
     function openBox() {
       if (step === 1) {
-        document.body.requestFullscreen();
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);

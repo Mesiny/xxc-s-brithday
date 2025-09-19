@@ -562,7 +562,6 @@ x = setInterval(function () {
 
     function openBox() {
       if (step === 1) {
-        document.body.requestFullscreen();
         box.removeEventListener('click', openBox, false);
       }
       stepClass(step);
