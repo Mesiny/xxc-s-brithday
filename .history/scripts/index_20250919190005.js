@@ -34,9 +34,9 @@ const config = {
       viewport.setAttribute(
         'content',
         'width=' + dw +
-        ', initial-scale=' + scale * 2 +
-        ', maximum-scale=' + scale * 2 +
-        ', minimum-scale=' + scale * 2 +
+        ', initial-scale=' + scale +
+        ', maximum-scale=' + scale +
+        ', minimum-scale=' + scale +
         ', user-scalable=no'
       );
       config.width = window.innerHeight;
@@ -50,9 +50,9 @@ const config = {
       viewport.setAttribute(
         'content',
         'width=' + dw +
-        ', initial-scale=' + scale * 2 +
-        ', maximum-scale=' + scale * 2 +
-        ', minimum-scale=' + scale * 2 +
+        ', initial-scale=' + scale +
+        ', maximum-scale=' + scale +
+        ', minimum-scale=' + scale +
         ', user-scalable=no'
       );
       config.width = window.innerWidth;
@@ -70,9 +70,9 @@ const config = {
       viewport.setAttribute(
         'content',
         'width=' + dw +
-        ', initial-scale=' + scale * 2 +
-        ', maximum-scale=' + scale * 2 +
-        ', minimum-scale=' + scale * 2 +
+        ', initial-scale=' + scale +
+        ', maximum-scale=' + scale +
+        ', minimum-scale=' + scale +
         ', user-scalable=no'
       );
       config.width = window.innerHeight;
