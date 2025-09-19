@@ -33,7 +33,7 @@ const config = {
       config.width = window.innerHeight;
       config.height = window.innerWidth;
     } else if (document.body.clientHeight < document.body.clientWidth) {
-      dw = 1334;
+      dw = 1334
       // if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
       // else dw = 1920;
       viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
