@@ -19,7 +19,7 @@ const config = {
 
 // 屏幕方向处理
 !function () {
-  // var viewport = document.getElementById('viewport');
+  var viewport = document.getElementById('viewport');
   var dw = null;
   var screenChange = document.getElementById('screen-change');
   function a() {
