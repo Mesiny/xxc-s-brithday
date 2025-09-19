@@ -65,7 +65,7 @@ const config = {
     if (window.orientation == 0) {
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
-      dw = 980;        //页面的高度
+      dw = 750;        //页面的高度
       let scale = window.innerWidth / dw;
       viewport.setAttribute(
         'content',
@@ -80,7 +80,7 @@ const config = {
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
-      dw = 1334 * Math.floor(980 / 750);   //页面的宽度
+      dw = 1334;        //页面的宽度
       let scale = window.innerWidth / dw;
       viewport.setAttribute(
         'content',
