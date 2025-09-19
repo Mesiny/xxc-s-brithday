@@ -2,7 +2,7 @@ const count = document.getElementById('count');   // 倒计时
 const head = document.getElementById('head');    // 头部标题
 const giftbox = document.getElementById('merrywrap');   // 礼物盒子
 const canvasC = document.getElementById('c');   // 气球文字特效
-const c2 = document.getElementById('confetti');  // 烟花特效
+const canvasConfetti = document.getElementById('confetti');  // 烟花个特效
 
 const config = {
   lunarData: {
@@ -13,7 +13,7 @@ const config = {
   name: '小小程'
 };
 
-// 屏幕方向处理
+
 !function () {
   var viewport = document.getElementById('viewport');
   var dw = null;
@@ -44,7 +44,7 @@ const config = {
   }, false);
 }(window);
 
-// 计算下一个生日
+
 function init() {
   // 得到birthdate
   const lunarData = {
@@ -59,6 +59,9 @@ function init() {
     day: 'numeric',  // numeric = 不带前导零的日（29）
     year: 'numeric'  // numeric = 四位年（2025）
   }).format(lsr.toDate());
+  // 得到的生日为距离当前最近的生日，用它计算倒计时不会有问题
+  // console.log(lunisolar.fromLunar(lunarData).valueOf() - new Date().getTime());
+  // console.log(lsr);
 }
 
 function hideEverything() {
@@ -493,10 +496,10 @@ x = setInterval(function () {
   }
 
   window.addEventListener('resize', function () {
-
     w = c.width = window.innerWidth;
     h = c.height = window.innerHeight;
-
+    w = c.width = window.innerWidth;
+    h = c.height = window.innerHeight;
 
     hw = w / 2;
     hh = h / 2;

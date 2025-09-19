@@ -59,6 +59,9 @@ function init() {
     day: 'numeric',  // numeric = 不带前导零的日（29）
     year: 'numeric'  // numeric = 四位年（2025）
   }).format(lsr.toDate());
+  // 得到的生日为距离当前最近的生日，用它计算倒计时不会有问题
+  // console.log(lunisolar.fromLunar(lunarData).valueOf() - new Date().getTime());
+  // console.log(lsr);
 }
 
 function hideEverything() {

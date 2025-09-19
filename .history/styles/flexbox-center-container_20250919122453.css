@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+#screen-change {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  z-index: 10
+}
+
+#screen-change.w {
+  height: 100vw;
+  width: 100vh;
+
+  transform: translate(-50%, -50%) rotate(90deg);
+  -webkit-transform: translate(-50%, -50%) rotate(90deg)
+}
+
+#screen-change.h {
+  height: 100vh;
+  width: 100vw;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%)
+}
