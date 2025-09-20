@@ -5,11 +5,9 @@ const canvasC = document.getElementById('c');   // 气球文字特效
 const c2 = document.getElementById('confetti');  // 烟花特效
 
 const ua = navigator.userAgent.toLowerCase();
-const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 4 : 1;
+const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 3 : 1;
 
-if (scale_iphone == 4) {
-  alert('苹果设备');
-}
+
 
 const config = {
   lunarData: {
@@ -53,8 +51,8 @@ const config = {
         'width=' + dw
         + ', user-scalable=no'
       );
-      config.width = window.innerWidth * scale_iphone;
-      config.height = window.innerHeight * scale_iphone;
+      config.width = window.innerWidth;
+      config.height = window.innerHeight;
     }
 
   }
@@ -81,8 +79,8 @@ const config = {
         'width=' + dw +
         ', user-scalable=no'
       );
-      config.width = window.innerWidth * scale_iphone;
-      config.height = window.innerHeight * scale_iphone;
+      config.width = window.innerWidth;
+      config.height = window.innerHeight;
     }
   }, false);
 }(window);

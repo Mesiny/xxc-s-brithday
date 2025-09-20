@@ -7,9 +7,7 @@ const c2 = document.getElementById('confetti');  // 烟花特效
 const ua = navigator.userAgent.toLowerCase();
 const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 4 : 1;
 
-if (scale_iphone == 4) {
-  alert('苹果设备');
-}
+
 
 const config = {
   lunarData: {
