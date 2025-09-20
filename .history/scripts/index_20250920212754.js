@@ -548,14 +548,6 @@ x = setInterval(function () {
     // }
     if (done) {
       index = (index + 1 < opts.strings.length) ? (index + 1) : 0;  // 先做循环
-      if (index == 0) {
-        cancelAnimationFrame(animationId);
-
-        document.addEventListener('click', function () {
-          index = 1;
-          animationId = window.requestAnimationFrame(anim);
-        });
-      }
       letters = [];
       for (let i = 0; i < opts.strings[index].length; ++i) {
         for (let j = 0; j < opts.strings[index][i].length; ++j) {

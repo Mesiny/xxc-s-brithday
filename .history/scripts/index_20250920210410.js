@@ -7,7 +7,7 @@ const c2 = document.getElementById('confetti');  // 烟花特效
 
 const ua = navigator.userAgent.toLowerCase();
 const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
-var animationId = 0;
+
 
 const config = {
   lunarData: {
@@ -526,9 +526,8 @@ x = setInterval(function () {
     ctx.bezierCurveTo(x + size / 4, y - size, x + size / 2, y - size / 2, x, y);
   }
 
-
   function anim() {
-    animationId = window.requestAnimationFrame(anim);
+    window.requestAnimationFrame(anim);
 
     ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, w, h);
@@ -548,13 +547,22 @@ x = setInterval(function () {
     // }
     if (done) {
       index = (index + 1 < opts.strings.length) ? (index + 1) : 0;  // 先做循环
-      if (index == 0) {
-        cancelAnimationFrame(animationId);
+      if (index === 0) {
+        // 1.添加文字提示  2.设置监听事件，点击后跳出死循环
+        function waitForClick() {
+          return new Promise((resolve) => {
+            console.log("等待点击事件...");
+            document.addEventListener('click', resolve, { once: true });
+          });
+        }
 
-        document.addEventListener('click', function () {
-          index = 1;
-          animationId = window.requestAnimationFrame(anim);
-        });
+        async function main() {
+          console.log("开始执行...");
+          await waitForClick();
+          console.log("继续执行后续代码...");
+        }
+
+        main();
       }
       letters = [];
       for (let i = 0; i < opts.strings[index].length; ++i) {
@@ -661,7 +669,7 @@ x = setInterval(function () {
 
     function showfireworks() {
       canvasC.style.display = 'initial';
-      timerId = setTimeout(anim, 1500);
+      setTimeout(anim, 1500);
     }
 
     init();

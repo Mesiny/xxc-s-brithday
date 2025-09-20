@@ -7,7 +7,7 @@ const c2 = document.getElementById('confetti');  // 烟花特效
 
 const ua = navigator.userAgent.toLowerCase();
 const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
-var animationId = 0;
+
 
 const config = {
   lunarData: {
@@ -172,7 +172,7 @@ x = setInterval(function () {
     // 眼里有霞
     // 文字 + 气球特效配置
     opts = {
-      strings: [['HAPPY', 'BIRTHDAY!', config.name], ['愿未来的路', '不再那么崎岖'], ['愿你的努力', '都被温柔回应'], ['生日快乐呀', '(｡･ω･｡)ﾉ♡'], ['愿你步步生花', '心中有光,眼里有霞']],
+      strings: [['HAPPY', 'BIRTHDAY!', config.name], ['愿未来的路', '不再那么崎岖'], ['愿你的努力', '都被温柔回应'], ['生日快乐呀(｡･ω･｡)ﾉ♡'], ['愿你步步生花', '心中有光', '眼里有霞']],
       charSize: 30 * window.devicePixelRatio * 1.5,
       charSpacing: 35 * window.devicePixelRatio * 1.5,
       lineHeight: 40 * window.devicePixelRatio * 1.5,
@@ -526,9 +526,8 @@ x = setInterval(function () {
     ctx.bezierCurveTo(x + size / 4, y - size, x + size / 2, y - size / 2, x, y);
   }
 
-
   function anim() {
-    animationId = window.requestAnimationFrame(anim);
+    window.requestAnimationFrame(anim);
 
     ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, w, h);
@@ -548,14 +547,6 @@ x = setInterval(function () {
     // }
     if (done) {
       index = (index + 1 < opts.strings.length) ? (index + 1) : 0;  // 先做循环
-      if (index == 0) {
-        cancelAnimationFrame(animationId);
-
-        document.addEventListener('click', function () {
-          index = 1;
-          animationId = window.requestAnimationFrame(anim);
-        });
-      }
       letters = [];
       for (let i = 0; i < opts.strings[index].length; ++i) {
         for (let j = 0; j < opts.strings[index][i].length; ++j) {
@@ -661,7 +652,7 @@ x = setInterval(function () {
 
     function showfireworks() {
       canvasC.style.display = 'initial';
-      timerId = setTimeout(anim, 1500);
+      setTimeout(anim, 1500);
     }
 
     init();

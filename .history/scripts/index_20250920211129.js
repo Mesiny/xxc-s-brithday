@@ -7,7 +7,7 @@ const c2 = document.getElementById('confetti');  // 烟花特效
 
 const ua = navigator.userAgent.toLowerCase();
 const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
-var animationId = 0;
+
 
 const config = {
   lunarData: {
@@ -528,7 +528,7 @@ x = setInterval(function () {
 
 
   function anim() {
-    animationId = window.requestAnimationFrame(anim);
+    window.requestAnimationFrame(anim);
 
     ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, w, h);
@@ -548,13 +548,10 @@ x = setInterval(function () {
     // }
     if (done) {
       index = (index + 1 < opts.strings.length) ? (index + 1) : 0;  // 先做循环
-      if (index == 0) {
-        cancelAnimationFrame(animationId);
+      if (index === 0) {
+        // 1.添加文字提示  2.直接return
+        clearTimeout(timerId);
 
-        document.addEventListener('click', function () {
-          index = 1;
-          animationId = window.requestAnimationFrame(anim);
-        });
       }
       letters = [];
       for (let i = 0; i < opts.strings[index].length; ++i) {
@@ -661,7 +658,7 @@ x = setInterval(function () {
 
     function showfireworks() {
       canvasC.style.display = 'initial';
-      timerId = setTimeout(anim, 1500);
+      var timerId = setTimeout(anim, 1500);
     }
 
     init();

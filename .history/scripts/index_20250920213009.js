@@ -550,8 +550,7 @@ x = setInterval(function () {
       index = (index + 1 < opts.strings.length) ? (index + 1) : 0;  // 先做循环
       if (index == 0) {
         cancelAnimationFrame(animationId);
-
-        document.addEventListener('click', function () {
+        document.addEventListener('click', function (e) {
           index = 1;
           animationId = window.requestAnimationFrame(anim);
         });

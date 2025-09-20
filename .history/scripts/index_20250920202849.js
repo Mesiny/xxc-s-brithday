@@ -7,12 +7,12 @@ const c2 = document.getElementById('confetti');  // 烟花特效
 
 const ua = navigator.userAgent.toLowerCase();
 const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
-var animationId = 0;
+
 
 const config = {
   lunarData: {
     month: 7,
-    day: 29
+    day: 30
   },
   birthdate: '',  // 阳历生日，初始化计算
   name: '小小程',
@@ -172,10 +172,10 @@ x = setInterval(function () {
     // 眼里有霞
     // 文字 + 气球特效配置
     opts = {
-      strings: [['HAPPY', 'BIRTHDAY!', config.name], ['愿未来的路', '不再那么崎岖'], ['愿你的努力', '都被温柔回应'], ['生日快乐呀', '(｡･ω･｡)ﾉ♡'], ['愿你步步生花', '心中有光,眼里有霞']],
-      charSize: 30 * window.devicePixelRatio * 1.5,
-      charSpacing: 35 * window.devicePixelRatio * 1.5,
-      lineHeight: 40 * window.devicePixelRatio * 1.5,
+      strings: [['HAPPY', 'BIRTHDAY!', config.name], ['愿未来的路', '不再那么崎岖'], ['愿你的努力', '都被温柔回应'], ['生日快乐呀'], ['愿你步步生花'], ['心中有光', '眼里有霞']],
+      charSize: 30 * window.devicePixelRatio,
+      charSpacing: 35 * window.devicePixelRatio,
+      lineHeight: 40 * window.devicePixelRatio,
       cx: w / 2,
       cy: h / 2,
       fireworkPrevPoints: 10 * window.devicePixelRatio,
@@ -526,9 +526,8 @@ x = setInterval(function () {
     ctx.bezierCurveTo(x + size / 4, y - size, x + size / 2, y - size / 2, x, y);
   }
 
-
   function anim() {
-    animationId = window.requestAnimationFrame(anim);
+    window.requestAnimationFrame(anim);
 
     ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, w, h);
@@ -543,36 +542,7 @@ x = setInterval(function () {
 
     ctx.translate(-hw, -hh);
 
-    // if (done) for (let l = 0; l < letters.length; ++l) {
-    //   letters[l].reset();
-    // }
-    if (done) {
-      index = (index + 1 < opts.strings.length) ? (index + 1) : 0;  // 先做循环
-      if (index == 0) {
-        cancelAnimationFrame(animationId);
-
-        document.addEventListener('click', function () {
-          index = 1;
-          animationId = window.requestAnimationFrame(anim);
-        });
-      }
-      letters = [];
-      for (let i = 0; i < opts.strings[index].length; ++i) {
-        for (let j = 0; j < opts.strings[index][i].length; ++j) {
-          letters.push(
-            new Letter(
-              opts.strings[index][i][j],
-              j * opts.charSpacing +
-              opts.charSpacing / 2 -
-              (opts.strings[index][i].length * opts.charSize) / 2,
-              i * opts.lineHeight +
-              opts.lineHeight / 2 -
-              (opts.strings[index].length * opts.lineHeight) / 2
-            )
-          );
-        }
-      }
-    }
+    if (done) for (let l = 0; l < letters.length; ++l) letters[l].reset();
   }
 
   for (let i = 0; i < opts.strings[index].length; ++i) {
@@ -621,13 +591,12 @@ x = setInterval(function () {
     count.style.display = 'none';
     giftbox.style.display = 'initial';
 
-    // console.log(gift.offsetWidth);
+    console.log(gift.offsetWidth);
     gift.style.width = parseInt(gift.offsetWidth * window.devicePixelRatio) + 'px';
     gift.style.height = parseInt(gift.offsetHeight * window.devicePixelRatio) + 'px';
     gift.style.marginLeft = parseInt((-1) * gift.offsetWidth * 0.5) + 'px';
     gift.style.fontSize = parseInt(gift.offsetHeight * 0.2) + 'px';
-    // console.log(gift.style.fontSize);
-    console.log("happy birthday");
+    console.log(gift.style.fontSize);
     clearInterval(x);
     let merrywrap = document.getElementById('merrywrap');
     let box = merrywrap.getElementsByClassName('giftbox')[0];
@@ -661,7 +630,7 @@ x = setInterval(function () {
 
     function showfireworks() {
       canvasC.style.display = 'initial';
-      timerId = setTimeout(anim, 1500);
+      setTimeout(anim, 1500);
     }
 
     init();
