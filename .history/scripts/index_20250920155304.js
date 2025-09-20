@@ -37,7 +37,7 @@ const config = {
       viewport.setAttribute(
         'content',
         'width=' + dw
-        + ', user-scalable=no'
+        // + ', user-scalable=no'
       );
       config.width = window.innerHeight * scale_iphone;
       config.height = window.innerWidth * scale_iphone;
@@ -49,7 +49,7 @@ const config = {
       viewport.setAttribute(
         'content',
         'width=' + dw
-        + ', user-scalable=no'
+        //  + ', user-scalable=no'
       );
       config.width = window.innerWidth;
       config.height = window.innerHeight;
@@ -66,7 +66,7 @@ const config = {
       viewport.setAttribute(
         'content',
         'width=' + dw
-        + ', user-scalable=no'
+        // + ', user-scalable=no'
       );
       config.width = window.innerHeight * scale_iphone;
       config.height = window.innerWidth * scale_iphone;
@@ -76,7 +76,7 @@ const config = {
       dw = 2080;   //页面的宽度
       viewport.setAttribute(
         'content',
-        'width=' + dw +
+        'width=' + dw
         ', user-scalable=no'
       );
       config.width = window.innerWidth;
