@@ -40,7 +40,7 @@ const config = {
       config.width = window.innerHeight * scale_iphone;
       config.height = window.innerWidth * scale_iphone;
     } else if (document.body.clientHeight < document.body.clientWidth) {
-      dw = 2080;
+      dw = 1334;
       // if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
       // else dw = 1920;
       // viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
@@ -71,7 +71,7 @@ const config = {
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
-      dw = 2080;   //页面的宽度
+      dw = 1334;   //页面的宽度
       viewport.setAttribute(
         'content',
         ', user-scalable=no'
@@ -81,6 +81,28 @@ const config = {
     }
   }, false);
 }(window);
+
+// function fixIOSViewport() {
+//   var meta = document.querySelector('meta[name=viewport]');
+//   if (!meta) {
+//     meta = document.createElement('meta');
+//     meta.name = 'viewport';
+//     document.head.appendChild(meta);
+//   }
+//   var scale = 1 / window.devicePixelRatio;
+//   meta.setAttribute(
+//     'content',
+//     'width=device-width,' +
+//     'initial-scale=' + scale +
+//     ',maximum-scale=' + scale +
+//     ',minimum-scale=' + scale +
+//     ',user-scalable=no'
+//   );
+// }
+
+// fixIOSViewport();
+// window.addEventListener('orientationchange', fixIOSViewport);
+
 
 // 计算下一个生日
 function init() {
@@ -145,8 +167,8 @@ x = setInterval(function () {
     ctx = c.getContext('2d'),
     hw = w / 2, // half-width
     hh = h / 2,
-    // 文字+气球特效配置
     opts = {
+      // 文字+气球特效配置
       strings: ['HAPPY', 'BIRTHDAY!', config.name],
       charSize: 30,
       charSpacing: 35,

@@ -145,8 +145,8 @@ x = setInterval(function () {
     ctx = c.getContext('2d'),
     hw = w / 2, // half-width
     hh = h / 2,
-    // 文字+气球特效配置
     opts = {
+      // 文字+气球特效配置
       strings: ['HAPPY', 'BIRTHDAY!', config.name],
       charSize: 30,
       charSpacing: 35,

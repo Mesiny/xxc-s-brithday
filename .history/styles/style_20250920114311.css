@@ -20,7 +20,7 @@ body {
   font-family: Helvetica, sans-serif;
   font-weight: lighter;
   text-align: center;
-  font-size: 300%;
+  font-size: 350%;
 }
 
 h1 {
@@ -30,7 +30,7 @@ h1 {
 
 li {
   display: inline-block;
-  font-size: 1em;
+  font-size: 0.75em;
   list-style-type: none;
   padding: 1em;
   text-transform: uppercase;

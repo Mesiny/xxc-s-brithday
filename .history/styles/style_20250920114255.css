@@ -20,7 +20,7 @@ body {
   font-family: Helvetica, sans-serif;
   font-weight: lighter;
   text-align: center;
-  font-size: 300%;
+  font-size: 350%;
 }
 
 h1 {
@@ -38,7 +38,7 @@ li {
 
 li span {
   display: block;
-  font-size: 2.25em;
+  font-size: 2em;
 }
 
 .merrywrap {
