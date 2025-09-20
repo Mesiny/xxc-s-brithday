@@ -11,7 +11,7 @@ const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
 const config = {
   lunarData: {
     month: 7,
-    day: 28
+    day: 29
   },
   birthdate: '',  // 阳历生日，初始化计算
   name: '小小程',
