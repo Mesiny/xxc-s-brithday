@@ -74,7 +74,7 @@ const config = {
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
-      dw = Math.floor(window.innerWidth * window.devicePixelRatio);   //页面的宽度
+      dw = 2080;   //页面的宽度
       viewport.setAttribute(
         'content',
         'width=' + dw +

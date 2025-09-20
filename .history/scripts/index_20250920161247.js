@@ -51,9 +51,8 @@ const config = {
         'width=' + dw
         + ', user-scalable=no'
       );
-      config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
-      config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
-      // config.height = window.innerHeight * scale_iphone;
+      config.width = window.innerWidth * (scale_iphone ? (Math.floor(window.devicePixelRatio + 0.5)) : 1);
+      config.height = window.innerHeight * scale_iphone;
     }
 
   }
@@ -74,14 +73,14 @@ const config = {
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
-      dw = Math.floor(window.innerWidth * window.devicePixelRatio);   //页面的宽度
+      dw = 2080;   //页面的宽度
       viewport.setAttribute(
         'content',
         'width=' + dw +
         ', user-scalable=no'
       );
-      config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
-      config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
+      config.width = window.innerWidth * scale_iphone;
+      config.height = window.innerHeight * scale_iphone;
     }
   }, false);
 }(window);

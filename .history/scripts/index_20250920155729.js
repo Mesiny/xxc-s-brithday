@@ -5,7 +5,7 @@ const canvasC = document.getElementById('c');   // 气球文字特效
 const c2 = document.getElementById('confetti');  // 烟花特效
 
 const ua = navigator.userAgent.toLowerCase();
-const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
+const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 4 : 1;
 
 
 const config = {
@@ -41,8 +41,7 @@ const config = {
       config.width = window.innerHeight * scale_iphone;
       config.height = window.innerWidth * scale_iphone;
     } else if (document.body.clientHeight < document.body.clientWidth) {
-      // dw改为设备的物理宽度 
-      dw = Math.floor(window.innerWidth * window.devicePixelRatio);
+      dw = 2080;
       // if (/mobile|android|iphone|ipod|blackberry|iemobile|opera mini/.test(ua)) dw = 1334;
       // else dw = 1920;
       // viewport.setAttribute('content', 'width=' + dw + ', user-scalable=no')
@@ -51,9 +50,8 @@ const config = {
         'width=' + dw
         + ', user-scalable=no'
       );
-      config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
-      config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
-      // config.height = window.innerHeight * scale_iphone;
+      config.width = window.innerWidth * scale_iphone;
+      config.height = window.innerHeight * scale_iphone;
     }
 
   }
@@ -74,14 +72,14 @@ const config = {
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
-      dw = Math.floor(window.innerWidth * window.devicePixelRatio);   //页面的宽度
+      dw = 2080;   //页面的宽度
       viewport.setAttribute(
         'content',
         'width=' + dw +
         ', user-scalable=no'
       );
-      config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
-      config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
+      config.width = window.innerWidth * scale_iphone;
+      config.height = window.innerHeight * scale_iphone;
     }
   }, false);
 }(window);
