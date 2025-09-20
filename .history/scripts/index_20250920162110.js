@@ -11,7 +11,7 @@ const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
 const config = {
   lunarData: {
     month: 7,
-    day: 29
+    day: 28
   },
   birthdate: '',  // 阳历生日，初始化计算
   name: '小小程',
@@ -51,8 +51,8 @@ const config = {
         'width=' + dw
         + ', user-scalable=no'
       );
-      // config.width = window.innerHeight * scale_iphone;
-      // config.height = window.innerWidth * scale_iphone;
+      config.width = window.innerHeight * scale_iphone;
+      config.height = window.innerWidth * scale_iphone;
       config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
       config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
       // config.height = window.innerHeight * scale_iphone;
@@ -82,8 +82,8 @@ const config = {
         'width=' + dw +
         ', user-scalable=no'
       );
-      // config.width = window.innerHeight * scale_iphone;
-      // config.height = window.innerWidth * scale_iphone;
+      config.width = window.innerHeight * scale_iphone;
+      config.height = window.innerWidth * scale_iphone;
       config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
       config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
     }
