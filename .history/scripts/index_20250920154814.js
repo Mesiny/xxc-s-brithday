@@ -51,8 +51,8 @@ const config = {
         'width=' + dw +
         ', user-scalable=no'
       );
-      config.width = window.innerWidth;
-      config.height = window.innerHeight;
+      config.width = window.innerWidth * scale_iphone;
+      config.height = window.innerHeight * scale_iphone;
     }
 
   }
@@ -78,8 +78,8 @@ const config = {
         'content',
         ', user-scalable=no'
       );
-      config.width = window.innerWidth;
-      config.height = window.innerHeight;
+      config.width = window.innerWidth * scale_iphone;
+      config.height = window.innerHeight * scale_iphone;
     }
   }, false);
 }(window);

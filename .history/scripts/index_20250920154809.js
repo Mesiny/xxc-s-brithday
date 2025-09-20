@@ -5,7 +5,7 @@ const canvasC = document.getElementById('c');   // 气球文字特效
 const c2 = document.getElementById('confetti');  // 烟花特效
 
 const ua = navigator.userAgent.toLowerCase();
-const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 2 : 1;
+const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 3 : 1;
 
 
 
@@ -51,8 +51,8 @@ const config = {
         'width=' + dw +
         ', user-scalable=no'
       );
-      config.width = window.innerWidth;
-      config.height = window.innerHeight;
+      config.width = window.innerWidth * scale_iphone;
+      config.height = window.innerHeight * scale_iphone;
     }
 
   }
@@ -78,8 +78,8 @@ const config = {
         'content',
         ', user-scalable=no'
       );
-      config.width = window.innerWidth;
-      config.height = window.innerHeight;
+      config.width = window.innerWidth * scale_iphone;
+      config.height = window.innerHeight * scale_iphone;
     }
   }, false);
 }(window);
