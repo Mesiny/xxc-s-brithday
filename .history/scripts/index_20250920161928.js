@@ -53,8 +53,8 @@ const config = {
       );
       config.width = window.innerHeight * scale_iphone;
       config.height = window.innerWidth * scale_iphone;
-      // config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
-      // config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
+      config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
+      config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
       // config.height = window.innerHeight * scale_iphone;
     }
 
@@ -84,8 +84,8 @@ const config = {
       );
       config.width = window.innerHeight * scale_iphone;
       config.height = window.innerWidth * scale_iphone;
-      // config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
-      // config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
+      config.width = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
+      config.height = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
     }
   }, false);
 }(window);
