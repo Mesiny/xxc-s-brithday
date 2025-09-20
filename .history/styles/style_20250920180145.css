@@ -51,8 +51,8 @@ li span {
 
 .giftbox {
   position: absolute;
-  width: 200px;
-  height: 150px;
+  width: 300px;
+  height: 200px;
   left: 50%;
   margin-left: -150px;
   bottom: 0;
@@ -62,7 +62,7 @@ li span {
 .giftbox>div {
   background: #F64747;
   position: absolute;
-  box-shadow: 10px 20px 36px rgba(0, 0, 0, 0.4);
+  box-shadow: 5px 10px 18px rgba(0, 0, 0, 0.4);
 }
 
 .giftbox>div:after,
@@ -79,7 +79,7 @@ li span {
   content: "Click Me!";
   left: 0;
   bottom: 0;
-  font-size: 75%;
+  font-size: 70%;
   text-align: center;
   transform: rotate(-20deg);
   transform-origin: 0 0;
@@ -108,8 +108,8 @@ li span {
   height: 50px;
   left: 50%;
   top: -50px;
-  transform: translateX(-50%) scale(2);
-
+  transform: translateX(-50%);
+  transform: scale(2);
 }
 
 .giftbox .cover>div:before,

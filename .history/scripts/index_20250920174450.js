@@ -581,12 +581,11 @@ x = setInterval(function () {
     count.style.display = 'none';
     giftbox.style.display = 'initial';
 
-    console.log(gift.offsetWidth);
-    gift.style.width = parseInt(gift.offsetWidth * window.devicePixelRatio) + 'px';
-    gift.style.height = parseInt(gift.offsetHeight * window.devicePixelRatio) + 'px';
-    gift.style.marginLeft = parseInt((-1) * gift.offsetWidth * 0.5) + 'px';
-    gift.style.fontSize = parseInt(gift.offsetHeight * 0.2) + 'px';
-    console.log(gift.style.fontSize);
+
+    console.log(giftbox.style);
+    giftbox.style.width = parseInt(giftbox.style.width) * window.devicePixelRatio + 'px';
+    giftbox.style.height = Math.floor(parseInt(giftbox.style.height) * window.devicePixelRatio) + 'px';
+    console.log(giftbox.style.width);
     clearInterval(x);
     let merrywrap = document.getElementById('merrywrap');
     let box = merrywrap.getElementsByClassName('giftbox')[0];

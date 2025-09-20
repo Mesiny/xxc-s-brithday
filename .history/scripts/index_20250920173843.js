@@ -1,7 +1,6 @@
 const count = document.getElementById('count');   // 倒计时
 const head = document.getElementById('head');    // 头部标题
 const giftbox = document.getElementById('merrywrap');   // 礼物盒子
-const gift = document.querySelector('.giftbox');
 const canvasC = document.getElementById('c');   // 气球文字特效
 const c2 = document.getElementById('confetti');  // 烟花特效
 
@@ -580,13 +579,9 @@ x = setInterval(function () {
     head.style.display = 'none';
     count.style.display = 'none';
     giftbox.style.display = 'initial';
-
-    console.log(gift.offsetWidth);
-    gift.style.width = parseInt(gift.offsetWidth * window.devicePixelRatio) + 'px';
-    gift.style.height = parseInt(gift.offsetHeight * window.devicePixelRatio) + 'px';
-    gift.style.marginLeft = parseInt((-1) * gift.offsetWidth * 0.5) + 'px';
-    gift.style.fontSize = parseInt(gift.offsetHeight * 0.2) + 'px';
-    console.log(gift.style.fontSize);
+    giftbox.style.width = parseInt(giftbox.style.width) * window.devicePixelRatio + 'px';
+    giftbox.style.height = Math.floor(parseInt(giftbox.style.height) * window.devicePixelRatio) + 'px';
+    console.log(giftbox.style.width);
     clearInterval(x);
     let merrywrap = document.getElementById('merrywrap');
     let box = merrywrap.getElementsByClassName('giftbox')[0];
