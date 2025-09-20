@@ -121,10 +121,10 @@ hideEverything();
 const confettiSettings = {
   target: 'confetti',
   maxCount: 100,
-  size: 2,
+  size: 1.5,
   decay: 0.94,
-  speed: 0.5,
-  fps: 30,
+  speed: 2,
+  fps: 24,
   origin: { x: 0.5, y: 0.5 }
 };
 c2.width = window.innerHeight;

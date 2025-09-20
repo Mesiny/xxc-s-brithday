@@ -11,7 +11,7 @@ const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
 const config = {
   lunarData: {
     month: 7,
-    day: 29
+    day: 28
   },
   birthdate: '',  // 阳历生日，初始化计算
   name: '小小程',
@@ -119,13 +119,7 @@ init();
 hideEverything();
 
 const confettiSettings = {
-  target: 'confetti',
-  maxCount: 100,
-  size: 2,
-  decay: 0.94,
-  speed: 0.5,
-  fps: 30,
-  origin: { x: 0.5, y: 0.5 }
+  target: 'confetti'
 };
 c2.width = window.innerHeight;
 c2.height = window.innerWidth;
@@ -180,9 +174,9 @@ x = setInterval(function () {
       fireworkCircleAddedTime: 30,
       fireworkCircleFadeBaseTime: 10,
       fireworkCircleFadeAddedTime: 5,
-      fireworkBaseShards: 5,
-      fireworkAddedShards: 5,
-      fireworkShardPrevPoints: 3,
+      fireworkBaseShards: 5 * window.devicePixelRatio,
+      fireworkAddedShards: 5 * window.devicePixelRatio,
+      fireworkShardPrevPoints: 3 * window.devicePixelRatio,
       fireworkShardBaseVel: 4,
       fireworkShardAddedVel: 2,
       fireworkShardBaseSize: 3 * window.devicePixelRatio,
@@ -193,8 +187,8 @@ x = setInterval(function () {
       balloonSpawnTime: 20,
       balloonBaseInflateTime: 10,
       balloonAddedInflateTime: 10,
-      balloonBaseSize: 20 * window.devicePixelRatio,
-      balloonAddedSize: 20 * window.devicePixelRatio,
+      balloonBaseSize: 20,
+      balloonAddedSize: 20,
       balloonBaseVel: 0.4,
       balloonAddedVel: 0.4,
       balloonBaseRadian: -(Math.PI / 2 - 0.5),

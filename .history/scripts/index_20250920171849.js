@@ -11,7 +11,7 @@ const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
 const config = {
   lunarData: {
     month: 7,
-    day: 29
+    day: 28
   },
   birthdate: '',  // 阳历生日，初始化计算
   name: '小小程',
@@ -119,13 +119,7 @@ init();
 hideEverything();
 
 const confettiSettings = {
-  target: 'confetti',
-  maxCount: 100,
-  size: 2,
-  decay: 0.94,
-  speed: 0.5,
-  fps: 30,
-  origin: { x: 0.5, y: 0.5 }
+  target: 'confetti'
 };
 c2.width = window.innerHeight;
 c2.height = window.innerWidth;
@@ -164,18 +158,18 @@ x = setInterval(function () {
     opts = {
       strings: ['HAPPY', 'BIRTHDAY!', config.name],
       charSize: 30 * window.devicePixelRatio,
-      charSpacing: 35 * window.devicePixelRatio,
-      lineHeight: 40 * window.devicePixelRatio,
+      charSpacing: 35,
+      lineHeight: 40 * window.devicePixelRatio, ,
       cx: w / 2,
       cy: h / 2,
-      fireworkPrevPoints: 10 * window.devicePixelRatio,
-      fireworkBaseLineWidth: 5 * window.devicePixelRatio,
-      fireworkAddedLineWidth: 8 * window.devicePixelRatio,
+      fireworkPrevPoints: 10,
+      fireworkBaseLineWidth: 5,
+      fireworkAddedLineWidth: 8,
       fireworkSpawnTime: 200,
       fireworkBaseReachTime: 30,
       fireworkAddedReachTime: 30,
-      fireworkCircleBaseSize: 20 * window.devicePixelRatio,
-      fireworkCircleAddedSize: 10 * window.devicePixelRatio,
+      fireworkCircleBaseSize: 20,
+      fireworkCircleAddedSize: 10,
       fireworkCircleBaseTime: 30,
       fireworkCircleAddedTime: 30,
       fireworkCircleFadeBaseTime: 10,
@@ -185,16 +179,16 @@ x = setInterval(function () {
       fireworkShardPrevPoints: 3,
       fireworkShardBaseVel: 4,
       fireworkShardAddedVel: 2,
-      fireworkShardBaseSize: 3 * window.devicePixelRatio,
-      fireworkShardAddedSize: 3 * window.devicePixelRatio,
+      fireworkShardBaseSize: 3,
+      fireworkShardAddedSize: 3,
       gravity: 0.1,
       upFlow: -0.1,
       letterContemplatingWaitTime: 360,
       balloonSpawnTime: 20,
       balloonBaseInflateTime: 10,
       balloonAddedInflateTime: 10,
-      balloonBaseSize: 20 * window.devicePixelRatio,
-      balloonAddedSize: 20 * window.devicePixelRatio,
+      balloonBaseSize: 20,
+      balloonAddedSize: 20,
       balloonBaseVel: 0.4,
       balloonAddedVel: 0.4,
       balloonBaseRadian: -(Math.PI / 2 - 0.5),
