@@ -64,15 +64,15 @@ const config = {
     if (window.orientation == 0) {
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
-      dw = Math.floor(window.innerHeight * window.devicePixelRatio);
+      dw = 1170;        //页面的高度
       // let scale = window.innerWidth / dw;
       viewport.setAttribute(
         'content',
         'width=' + dw
         + ', user-scalable=no'
       );
-      config.width = Math.floor(window.innerHeight * (scale_iphone ? window.devicePixelRatio : 1));
-      config.height = Math.floor(window.innerWidth * (scale_iphone ? window.devicePixelRatio : 1));
+      config.width = window.innerHeight * scale_iphone;
+      config.height = window.innerWidth * scale_iphone;
     } else if (window.orientation == 90) {
       screenChange.classList.remove('w');
       screenChange.classList.add('h');
