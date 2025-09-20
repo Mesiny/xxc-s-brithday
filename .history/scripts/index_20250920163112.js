@@ -27,8 +27,8 @@ const config = {
   function a() {
     if (document.body.clientHeight > document.body.clientWidth) {
       // 竖着的屏幕
-      dw = Math.floor(window.innerWidth * window.devicePixelRatio);        //页面的高度
-      // console.log(dw);
+      dw = Math.floor(window.innerWeight * window.devicePixelRatio);        //页面的高度
+      console.log(dw);
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
       // 此时宽高已经互换，对于c来说应该执行宽高互换后的逻辑
@@ -65,7 +65,7 @@ const config = {
     if (window.orientation == 0) {
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
-      dw = Math.floor(window.innerWidth * window.devicePixelRatio);
+      dw = Math.floor(window.innerHeight * window.devicePixelRatio);
       // let scale = window.innerWidth / dw;
       viewport.setAttribute(
         'content',

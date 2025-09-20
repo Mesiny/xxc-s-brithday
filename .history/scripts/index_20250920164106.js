@@ -65,7 +65,7 @@ const config = {
     if (window.orientation == 0) {
       screenChange.classList.remove('h');
       screenChange.classList.add('w');
-      dw = Math.floor(window.innerWidth * window.devicePixelRatio);
+      dw = Math.floor(window.innerHeight * window.devicePixelRatio);
       // let scale = window.innerWidth / dw;
       viewport.setAttribute(
         'content',
