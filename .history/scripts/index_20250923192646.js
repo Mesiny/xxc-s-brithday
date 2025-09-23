@@ -13,7 +13,7 @@ let audio = new Audio();
 const config = {
   lunarData: {
     month: 8,
-    day: 3
+    day: 2
   },
   birthdate: '',  // 阳历生日，初始化计算
   name: '小小程',

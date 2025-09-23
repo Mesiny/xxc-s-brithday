@@ -13,7 +13,7 @@ let audio = new Audio();
 const config = {
   lunarData: {
     month: 8,
-    day: 3
+    day: 2
   },
   birthdate: '',  // 阳历生日，初始化计算
   name: '小小程',
@@ -174,13 +174,12 @@ x = setInterval(function () {
     // 文字 + 气球特效配置
     opts = {
       strings: [['HAPPY', 'BIRTHDAY!', config.name],
-      ['愿你在新的一岁里', '清晨醒来，心安如昔'],
-      ['风吹窗帘,', '阳光落笔,', '一切都恰到好处地美丽'],
-      ['你不必耀眼如星', '  也会被世界所爱'],
+      ['  愿你在新的一岁里', '清晨醒来心安如昔  '],
+      ['风吹窗帘,阳光落笔', '一切都恰到好处地美丽^_^'],
+      ['你不必耀眼如星  ', '  也会被世界所爱'],
       ['你本就温柔坚定', '像夜灯', '静静照亮自己'],
-      // ｍ(o・ω・o)ｍ
-      ['愿未来的路', '不再那么崎岖', 'ｍ(o・ω・o)ｍ'],
-      ['愿你的努力', '都被温柔回应', '（*＾-＾*）'],
+      ['愿未来的路', '不再那么崎岖'],
+      ['愿你的努力', '都被温柔回应'],
       ['生日快乐呀', '(｡･ω･｡)ﾉ♡'],
       ['愿你步步生花', '心中有光,眼里有霞'],
       ['(￣▽￣)～■干杯□～(￣▽￣)'],
@@ -667,7 +666,6 @@ x = setInterval(function () {
     }
 
     function showfireworks() {
-      box.removeEventListener('click', showfireworks, false);
       canvasC.style.display = 'initial';
       timerId = setTimeout(anim, 1500);
     }

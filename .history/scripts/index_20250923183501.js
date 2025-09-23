@@ -8,7 +8,6 @@ const c2 = document.getElementById('confetti');  // 烟花特效
 const ua = navigator.userAgent.toLowerCase();
 const scale_iphone = (/iPhone|iPod|iPad/i.test(navigator.userAgent)) ? 1 : 0;
 var animationId = 0;
-let audio = new Audio();
 
 const config = {
   lunarData: {
@@ -174,18 +173,16 @@ x = setInterval(function () {
     // 文字 + 气球特效配置
     opts = {
       strings: [['HAPPY', 'BIRTHDAY!', config.name],
-      ['愿你在新的一岁里', '清晨醒来，心安如昔'],
-      ['风吹窗帘,', '阳光落笔,', '一切都恰到好处地美丽'],
-      ['你不必耀眼如星', '  也会被世界所爱'],
-      ['你本就温柔坚定', '像夜灯', '静静照亮自己'],
-      // ｍ(o・ω・o)ｍ
-      ['愿未来的路', '不再那么崎岖', 'ｍ(o・ω・o)ｍ'],
-      ['愿你的努力', '都被温柔回应', '（*＾-＾*）'],
+      ['愿你', '在新的一岁里'],
+      ['清晨醒来心安如昔'],
+      [' 风吹窗帘', '阳光落笔'],
+      ['一切都恰到好处地美丽'],
+      [],
+      ['你不必耀眼如星', '也值得被世界所爱'],
+      [‘],
+
       ['生日快乐呀', '(｡･ω･｡)ﾉ♡'],
-      ['愿你步步生花', '心中有光,眼里有霞'],
-      ['(￣▽￣)～■干杯□～(￣▽￣)'],
-      ['温馨提示(￣┰￣*)', '以下为重复播放']
-      ],
+      ['愿你步步生花', '心中有光,眼里有霞']],
       charSize: 30 * window.devicePixelRatio * 1.5,
       charSpacing: 35 * window.devicePixelRatio * 1.5,
       lineHeight: 40 * window.devicePixelRatio * 1.5,
@@ -652,8 +649,6 @@ x = setInterval(function () {
     function openBox() {
       if (step === 1) {
         box.removeEventListener('click', openBox, false);
-        audio.src = 'static/bcmusic.mp3';
-        audio.play();
       }
       stepClass(step);
       if (step === 3) {
@@ -667,7 +662,6 @@ x = setInterval(function () {
     }
 
     function showfireworks() {
-      box.removeEventListener('click', showfireworks, false);
       canvasC.style.display = 'initial';
       timerId = setTimeout(anim, 1500);
     }
